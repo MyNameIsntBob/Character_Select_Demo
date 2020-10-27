@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Buttons.gd" type="Script" id=1]
+
+[node name="Buttons" type="HBoxContainer"]
+margin_top = 290.0
+margin_right = 75.0
+margin_bottom = 310.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="left" type="Button" parent="."]
+margin_right = 17.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 21.0
+margin_top = 3.0
+margin_right = 48.0
+margin_bottom = 17.0
+text = "Test"
+
+[node name="right" type="Button" parent="."]
+margin_left = 52.0
+margin_right = 72.0
+margin_bottom = 20.0
+text = "+"
+[connection signal="pressed" from="left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="right" to="." method="_on_right_pressed"]

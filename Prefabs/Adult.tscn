@@ -1,0 +1,119 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/CharacterParts.png-2fd9d9f58b94568f6a47e67aba7531b3.stex"
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:frame_coords:x")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 6.0, 7.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Legs:frame_coords:x")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 12.0, 13.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Head:frame_coords:x")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Run"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:frame_coords:x")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 2.0, 3.0, 4.0, 5.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:frame_coords:x")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 8.0, 9.0, 10.0, 11.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Legs:frame_coords:x")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 14.0, 15.0, 16.0, 17.0 ]
+}
+
+[node name="Adult" type="Node2D"]
+
+[node name="Head" type="Sprite" parent="."]
+texture = SubResource( 1 )
+vframes = 12
+hframes = 31
+frame = 189
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Body" type="Sprite" parent="."]
+texture = SubResource( 1 )
+vframes = 12
+hframes = 31
+frame = 71
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Legs" type="Sprite" parent="."]
+texture = SubResource( 1 )
+vframes = 12
+hframes = 31
+frame = 46
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Idle = SubResource( 3 )
+anims/Run = SubResource( 2 )

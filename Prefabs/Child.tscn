@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/CharacterParts.png-2fd9d9f58b94568f6a47e67aba7531b3.stex"
+
+[sub_resource type="Animation" id=3]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:frame_coords:x")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 19.0, 20.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Legs:frame_coords:x")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 25.0, 26.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Run"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:frame_coords:x")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 21.0, 22.0, 23.0, 24.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Legs:frame_coords:x")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 27.0, 28.0, 29.0, 30.0 ]
+}
+
+[node name="Child" type="Node2D"]
+
+[node name="Head" type="Sprite" parent="."]
+texture = SubResource( 1 )
+vframes = 24
+hframes = 31
+frame = 206
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Legs" type="Sprite" parent="."]
+texture = SubResource( 1 )
+vframes = 24
+hframes = 31
+frame = 181
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Idle = SubResource( 3 )
+anims/Run = SubResource( 2 )
