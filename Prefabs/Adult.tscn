@@ -3,7 +3,7 @@
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/CharacterParts.png-2fd9d9f58b94568f6a47e67aba7531b3.stex"
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Idle"
 loop = true
 tracks/0/type = "value"
@@ -43,8 +43,7 @@ tracks/2/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Run"
+[sub_resource type="Animation" id=3]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -87,6 +86,7 @@ tracks/2/keys = {
 [node name="Adult" type="Node2D"]
 
 [node name="Head" type="Sprite" parent="."]
+z_index = 1
 texture = SubResource( 1 )
 vframes = 12
 hframes = 31
@@ -115,5 +115,5 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
-anims/Idle = SubResource( 3 )
-anims/Run = SubResource( 2 )
+anims/Idle = SubResource( 2 )
+anims/Run = SubResource( 3 )
